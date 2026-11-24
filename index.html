@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
+		<title>Dian &amp; Ajeng — Undangan Pernikahan | 6 Desember 2026</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="page-backdrop">
+			<div
+				id="invitation-shell"
+				class="invitation-shell is-locked"
+			>
+				<!-- Tombol Musik -->
+				<button
+					id="music-toggle"
+					class="music-toggle"
+					type="button"
+					aria-label="Putar atau hentikan musik latar"
+					title="Musik"
+				>
+					<svg class="music-icon theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M9 18V5l10-2v13" />
+						<circle cx="6.5" cy="18" r="2.5" />
+						<circle cx="16.5" cy="16" r="2.5" />
+					</svg>
+					<span class="music-label">Musik</span>
+				</button>
+
+				<!-- HERO: PINTU LINEN SAGE -> TIRAI MUTIARA -> VILA BORDIR -->
+				<section
+					id="hero"
+					class="hero-section"
+				>
+					<div class="hero-stage">
+						<img
+							src="/assets/hero-estate.png"
+							alt="Vila taman bordir dan air mancur"
+							class="hero-estate-img"
+						/>
+						<div
+							id="hero-couple-reveal"
+							class="hero-couple-reveal"
+						>
+							<h1 class="hero-names">
+								<span>Dian</span>
+								<span class="hero-amp">&amp;</span>
+								<span>Ajeng</span>
+							</h1>
+							<p class="hero-date">6 Desember 2026</p>
+						</div>
+					</div>
+
+					<!-- Kelopak Bunga 3D Three.js -->
+					<canvas
+						id="curtain-canvas"
+						class="curtain-canvas"
+					></canvas>
+
+					<!-- Tirai Kain Linen & Mutiara -->
+					<div
+						id="curtain-fallback"
+						class="curtain-fallback is-active"
+						aria-hidden="true"
+					>
+						<img
+							src="/assets/curtain-drapes.png"
+							alt="Tirai kain linen gading dengan mutiara"
+							class="curtain-drapes-img"
+						/>
+					</div>
+
+					<!-- Pintu Linen Sage Awal -->
+					<div
+						id="sage-doors"
+						class="sage-doors"
+					>
+						<div class="sage-door sage-door-left"></div>
+						<div class="sage-door sage-door-right"></div>
+						<div class="sage-seam"></div>
+					</div>
+
+					<!-- Plakat Monogram Emas -->
+					<button
+						id="open-curtain-btn"
+						class="monogram-crest-btn"
+						type="button"
+						aria-label="Buka undangan pernikahan Dian dan Ajeng"
+					>
+						<svg
+							class="plaque-svg"
+							viewBox="0 0 180 230"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<defs>
+								<filter id="plaqueShadow" x="-20%" y="-20%" width="140%" height="140%">
+									<feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#2c2620" flood-opacity="0.38"/>
+								</filter>
+								<linearGradient id="goldThread" x1="0" y1="0" x2="1" y2="1">
+									<stop offset="0%" stop-color="#c9a86a"/>
+									<stop offset="50%" stop-color="#a58146"/>
+									<stop offset="100%" stop-color="#d5b87e"/>
+								</linearGradient>
+							</defs>
+							<path
+								d="M90,10 C104,10 112,24 128,24 C146,24 156,36 156,54 C156,72 164,86 164,115 C164,144 156,158 156,176 C156,194 146,206 128,206 C112,206 104,220 90,220 C76,220 68,206 52,206 C34,206 24,194 24,176 C24,158 16,144 16,115 C16,86 24,72 24,54 C24,36 34,24 52,24 C68,24 76,10 90,10 Z"
+								fill="#f7f1e8"
+								stroke="#e2d5c1"
+								stroke-width="2"
+								filter="url(#plaqueShadow)"
+							/>
+							<path
+								d="M90,22 C101,22 108,34 122,34 C136,34 144,44 144,58 C144,74 152,88 152,115 C152,142 144,156 144,172 C144,186 136,196 122,196 C108,196 101,208 90,208 C79,208 72,196 58,196 C44,196 36,186 36,172 C36,156 28,142 28,115 C28,88 36,74 36,58 C36,44 44,34 58,34 C72,34 79,22 90,22 Z"
+								fill="none"
+								stroke="url(#goldThread)"
+								stroke-width="2"
+							/>
+							<circle cx="90" cy="20" r="3" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+							<circle cx="84" cy="24" r="2.2" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+							<circle cx="96" cy="24" r="2.2" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+							<circle cx="90" cy="210" r="3" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+							<circle cx="84" cy="206" r="2.2" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+							<circle cx="96" cy="206" r="2.2" fill="#fffdf9" stroke="#d5c6b3" stroke-width="0.6"/>
+						</svg>
+						<span class="crest-initials">D&amp;A</span>
+						<div id="cover-guest-box" class="cover-guest-box" hidden>
+							<span class="cover-guest-label">Kepada Yth.</span>
+							<span id="cover-guest-name" class="cover-guest-name"></span>
+						</div>
+						<span class="crest-hint">KETUK UNTUK MEMBUKA</span>
+					</button>
+
+					<a
+						id="scroll-cue"
+						href="#welcome"
+						class="scroll-cue"
+						aria-label="Gulir ke isi undangan"
+					>
+						<span>Gulir</span>
+						<span class="scroll-line"></span>
+					</a>
+				</section>
+
+				<!-- ISI UNDANGAN -->
+				<main
+					id="invitation-content"
+					class="invitation-content"
+				>
+					<!-- BAGIAN 2: SELAMAT DATANG & ANGSA BERPISAH -->
+					<section
+						id="welcome"
+						class="section-welcome reveal-on-scroll"
+					>
+						<div class="welcome-art-frame">
+							<img
+								src="/assets/welcome-top-ornament.png"
+								alt=""
+								class="welcome-layer welcome-top-img"
+							/>
+							<img
+								src="/assets/welcome-swan-left.png"
+								alt="Angsa bordir kiri"
+								class="welcome-layer welcome-swan-left"
+							/>
+							<img
+								src="/assets/welcome-swan-right.png"
+								alt="Angsa bordir kanan"
+								class="welcome-layer welcome-swan-right"
+							/>
+							<img
+								src="/assets/welcome-bottom-border.png"
+								alt=""
+								class="welcome-layer welcome-bottom-img"
+							/>
+							<div class="welcome-overlay-copy">
+								<h2 class="section-serif-title">
+									Selamat Datang<br />di Pernikahan Kami
+								</h2>
+								<p class="welcome-body">
+									Dengan penuh syukur dan kebahagiaan, kami mengundang keluarga
+									serta sahabat tercinta untuk menjadi saksi dan bagian dari hari
+									bahagia kami.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<!-- BAGIAN 3: HITUNG MUNDUR -->
+					<section
+						id="countdown"
+						class="section-countdown reveal-on-scroll"
+					>
+						<h2 class="section-script-heading">Menuju Hari Bahagia</h2>
+
+						<div
+							class="countdown-grid"
+							role="timer"
+							aria-live="polite"
+						>
+							<div class="countdown-medallion">
+								<span
+									id="cd-days"
+									class="cd-number"
+								>00</span>
+								<span class="cd-label">HARI</span>
+							</div>
+							<div class="countdown-medallion">
+								<span
+									id="cd-hours"
+									class="cd-number"
+								>00</span>
+								<span class="cd-label">JAM</span>
+							</div>
+							<div class="countdown-medallion">
+								<span
+									id="cd-minutes"
+									class="cd-number"
+								>00</span>
+								<span class="cd-label">MENIT</span>
+							</div>
+						</div>
+
+						<div class="layered-ornament-stage">
+							<img
+								src="/assets/collar-leaves.png"
+								alt=""
+								class="layer-base-img collar-leaves-img"
+							/>
+							<img
+								src="/assets/collar-flowers.png"
+								alt="Ornamen bunga bordir dan mutiara"
+								class="layer-top-img collar-flowers-img"
+							/>
+						</div>
+					</section>
+
+					<!-- BAGIAN 4: PROFIL MEMPELAI -->
+					<section
+						id="couple-intro"
+						class="section-couple-intro reveal-on-scroll"
+					>
+						<p class="intro-kicker">
+							Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
+							menyelenggarakan pernikahan putra-putri kami:
+						</p>
+
+						<div class="couple-person">
+							<div class="couple-portrait-frame">
+								<img
+									src="/gallery/dian.jpeg"
+									alt="Dian Hidayat"
+									class="couple-portrait-img"
+									loading="lazy"
+								/>
+							</div>
+							<p class="couple-role">MEMPELAI PRIA</p>
+							<h2 class="couple-fullname">Dian Hidayat</h2>
+							<p class="couple-parents">Putra dari Bapak Jaenudin (Smiley) &amp; Ibu Yayah</p>
+							<a
+								class="couple-ig-link"
+								href="https://www.instagram.com/hadian0_0/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								@dianhidayat
+							</a>
+						</div>
+
+						<p class="couple-and">&amp;</p>
+
+						<div class="couple-person">
+							<div class="couple-portrait-frame">
+								<img
+									src="/gallery/ajeng.jpeg"
+									alt="Ajeng Fauziah"
+									class="couple-portrait-img"
+									loading="lazy"
+								/>
+							</div>
+							<p class="couple-role">MEMPELAI WANITA</p>
+							<h2 class="couple-fullname">Ajeng Fauziah</h2>
+							<p class="couple-parents">Putri dari Bapak Jaenal Abidin &amp; Ibu Tati</p>
+							<a
+								class="couple-ig-link"
+								href="https://www.instagram.com/ajengfzh22/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								@ajengfauziah
+							</a>
+						</div>
+
+						<p class="intro-date">Minggu, 6 Desember 2026</p>
+					</section>
+
+					<!-- BAGIAN 5: AKAD & RESEPSI -->
+					<section
+						id="ceremony"
+						class="section-venue-card reveal-on-scroll"
+					>
+						<div class="embroidered-frame-box">
+							<img
+								src="/assets/ceremony-frame.png"
+								alt="Bingkai bunga wisteria dan mawar bordir"
+								class="frame-bg-img"
+							/>
+							<div class="frame-overlay-content">
+								<h2 class="venue-heading">Akad<br />&amp; Resepsi</h2>
+								<p class="venue-eyebrow">LOKASI ACARA</p>
+
+								<div class="venue-details">
+									<h3 class="venue-name">Alun-alun Desa Pajajar</h3>
+									<p class="venue-address">
+										Desa Pajajar, Kec. Rajagaluh<br />
+										Kab. Majalengka, Jawa Barat
+									</p>
+									<p class="venue-date-line">Minggu, 6 Desember 2026</p>
+									<p class="venue-time-line">
+										Akad Nikah &bull; 08.00 &ndash; 10.00 WIB<br />
+										Resepsi &bull; 11.30 &ndash; 14.00 WIB
+									</p>
+								</div>
+
+								<div class="venue-actions">
+									<a
+										class="editorial-action-btn"
+										href="https://www.google.com/maps/dir/?api=1&destination=-6.824918322911508,108.34005879749994"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+											<path d="M12 21s-6.5-5.6-6.5-11.2a6.5 6.5 0 1 1 13 0C18.5 15.4 12 21 12 21Z" />
+											<circle cx="12" cy="9.8" r="2.2" />
+										</svg>
+										<span>BUKA DI PETA</span>
+									</a>
+									<button
+										id="add-ceremony-cal"
+										class="editorial-action-btn"
+										type="button"
+									>
+										<svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+											<rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+											<path d="M8 3.2v3.6M16 3.2v3.6M3.5 9.8h17" />
+										</svg>
+										<span>TAMBAH KE KALENDER</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- BAGIAN 6: BUSANA TAMU -->
+					<section
+						id="dress-code"
+						class="section-dress-code reveal-on-scroll"
+					>
+						<h2 class="section-serif-title">Busana Tamu</h2>
+						<p class="dress-subtitle">Garden Formal / Batik &amp; Kebaya</p>
+						<p class="dress-note">
+							Acara akan berlangsung di area taman terbuka; para tamu disarankan
+							mengenakan busana bernuansa pastel, hijau sage, atau gelap klasik
+							beserta alas kaki yang nyaman.
+						</p>
+
+						<img
+							src="/assets/dress-code-guests.png"
+							alt="Ilustrasi busana tamu undangan"
+							class="full-bleed-img dress-img"
+						/>
+					</section>
+
+					<!-- BAGIAN 7: KISAH KAMI -->
+					<section
+						id="our-story"
+						class="section-our-story reveal-on-scroll"
+					>
+						<div class="layered-ornament-stage story-arch-stage">
+							<img
+								src="/assets/story-leaves.png"
+								alt=""
+								class="layer-base-img story-leaves-img"
+							/>
+							<img
+								src="/assets/story-flowers.png"
+								alt="Lengkungan bunga wisteria dan mawar"
+								class="layer-top-img story-flowers-img"
+							/>
+						</div>
+						<div class="story-inner">
+							<h2 class="section-serif-title">Kisah Kami</h2>
+							<p class="story-text">
+								Berawal dari pertemuan sederhana di sebuah sore yang teduh,
+								tumbuh menjadi cerita penuh tawa, doa, dan langkah yang searah.
+								Kini kami siap melangkah ke babak baru bersama orang-orang
+								terkasih.
+							</p>
+						</div>
+					</section>
+
+					<!-- BAGIAN 8: SUSUNAN ACARA -->
+					<section
+						id="timeline"
+						class="section-timeline reveal-on-scroll"
+					>
+						<h2 class="section-serif-title">Susunan Acara</h2>
+
+						<div class="timeline-list">
+							<div class="timeline-row">
+								<div class="timeline-icon">
+									<img src="/assets/timeline-chapel.jpg" alt="Kedatangan Tamu" />
+								</div>
+								<div class="timeline-info">
+									<span class="tl-time">08:30 WIB</span>
+									<span class="tl-title">TAMU UNDANGAN HADIR DI PENDOPO TAMAN</span>
+								</div>
+							</div>
+							<div class="timeline-row">
+								<div class="timeline-icon">
+									<img src="/assets/timeline-rings.jpg" alt="Akad Nikah" />
+								</div>
+								<div class="timeline-info">
+									<span class="tl-time">09:00 WIB</span>
+									<span class="tl-title">PROSESI AKAD NIKAH DIMULAI</span>
+								</div>
+							</div>
+							<div class="timeline-row">
+								<div class="timeline-icon">
+									<img src="/assets/timeline-cocktail.jpg" alt="Ramah Tamah" />
+								</div>
+								<div class="timeline-info">
+									<span class="tl-time">11:00 WIB</span>
+									<span class="tl-title">RAMAH TAMAH &amp; SESI FOTO</span>
+								</div>
+							</div>
+							<div class="timeline-row">
+								<div class="timeline-icon">
+									<img src="/assets/timeline-discoball.png" alt="Resepsi" />
+								</div>
+								<div class="timeline-info">
+									<span class="tl-time">12:00 WIB</span>
+									<span class="tl-title">RESEPSI &amp; JAMUAN MAKAN SIANG</span>
+								</div>
+							</div>
+						</div>
+
+						<p class="timeline-footnote">
+							Akad nikah dan resepsi akan dilangsungkan di Alun-alun Desa
+							Pajajar, Kec. Rajagaluh, Kab. Majalengka.
+						</p>
+					</section>
+
+					<!-- BAGIAN 9: GALERI FOTO 3D & VIDEO MOMEN -->
+					<section
+						id="gallery"
+						class="section-gallery reveal-on-scroll"
+					>
+						<h2 class="section-serif-title">Galeri Momen</h2>
+						<p class="gallery-subtitle">
+							Potret kebersamaan kami menuju hari bahagia
+						</p>
+
+						<div class="gallery-grid-3d">
+							<button
+								type="button"
+								class="gallery-card gallery-card-wide"
+								data-lightbox="/gallery/cover.jpeg"
+								aria-label="Perbesar foto sampul"
+							>
+								<img src="/gallery/cover.jpeg" alt="Dian & Ajeng" loading="lazy" />
+							</button>
+							<button
+								type="button"
+								class="gallery-card"
+								data-lightbox="/gallery/curtain.jpg"
+								aria-label="Perbesar foto galeri 1"
+							>
+								<img src="/gallery/curtain.jpg" alt="Dian & Ajeng" loading="lazy" />
+							</button>
+							<button
+								type="button"
+								class="gallery-card"
+								data-lightbox="/gallery/seated.jpg"
+								aria-label="Perbesar foto galeri 2"
+							>
+								<img src="/gallery/seated.jpg" alt="Dian & Ajeng" loading="lazy" />
+							</button>
+							<button
+								type="button"
+								class="gallery-card"
+								data-lightbox="/gallery/umbrella.jpg"
+								aria-label="Perbesar foto galeri 3"
+							>
+								<img src="/gallery/umbrella.jpg" alt="Dian & Ajeng" loading="lazy" />
+							</button>
+							<button
+								type="button"
+								class="gallery-card"
+								data-lightbox="/gallery/countdown.jpg"
+								aria-label="Perbesar foto galeri 4"
+							>
+								<img src="/gallery/countdown.jpg" alt="Dian & Ajeng" loading="lazy" />
+							</button>
+						</div>
+
+						<!-- Video Player Embed -->
+						<div class="video-moment-wrap">
+							<h3 class="video-moment-title">Video Undangan</h3>
+							<div class="video-frame-box">
+								<video
+									id="wedding-video-player"
+									class="wedding-video"
+									controls
+									playsinline
+									preload="metadata"
+									poster="/gallery/cover.jpeg"
+								>
+									<source src="/gallery/wedding-video.mp4" type="video/mp4" />
+									Browser Anda tidak mendukung pemutar video.
+								</video>
+							</div>
+							<a
+								class="editorial-action-btn video-yt-btn"
+								href="https://youtube.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<span>TONTON LIVE STREAMING</span>
+							</a>
+						</div>
+					</section>
+
+					<!-- BAGIAN 10: TANDA KASIH -->
+					<section
+						id="gifts"
+						class="section-gifts reveal-on-scroll"
+					>
+						<div class="gifts-frame-box">
+							<img
+								src="/assets/gifts-frame.png"
+								alt="Bingkai bordir emas dan bunga"
+								class="frame-bg-img"
+							/>
+							<div class="gifts-overlay-content">
+								<h2 class="section-serif-title">Tanda Kasih</h2>
+								<p class="gifts-text">
+									Kehadiran dan doa restu Anda merupakan hadiah terindah bagi
+									kami. Apabila berkenan memberikan tanda kasih, informasi
+									tersedia di bawah ini.
+								</p>
+								<button
+									id="open-gifts-modal"
+									class="editorial-action-btn"
+									type="button"
+								>
+									<span>LIHAT REKENING</span>
+								</button>
+							</div>
+						</div>
+
+						<div class="gifts-envelope-wrap">
+							<img
+								src="/assets/gifts-envelope.png"
+								alt="Amplop linen bordir bersegel"
+								class="gifts-envelope-img"
+							/>
+						</div>
+					</section>
+
+					<!-- BAGIAN 11: UCAPAN & DOA (KOMENTAR + RSVP) -->
+					<section
+						id="rsvp"
+						class="section-rsvp reveal-on-scroll"
+					>
+						<h2 class="section-serif-title">Ucapan &amp; Doa</h2>
+						<p class="rsvp-subtitle">
+							Kirimkan doa restu dan konfirmasi kehadiran Anda untuk Dian &amp; Ajeng.
+						</p>
+
+						<form
+							id="rsvp-form"
+							class="rsvp-form"
+							novalidate
+						>
+							<div class="form-field">
+								<label for="rsvp-name">Nama Lengkap</label>
+								<input
+									id="rsvp-name"
+									name="name"
+									type="text"
+									maxlength="40"
+									required
+									placeholder="Masukkan nama Anda"
+								/>
+							</div>
+
+							<div class="form-field">
+								<span class="field-label">Konfirmasi Kehadiran</span>
+								<div
+									class="attendance-pills"
+									role="radiogroup"
+									aria-label="Konfirmasi Kehadiran"
+								>
+									<button
+										type="button"
+										class="pill-btn is-active"
+										data-attendance="yes"
+										aria-checked="true"
+										role="radio"
+									>
+										Hadir
+									</button>
+									<button
+										type="button"
+										class="pill-btn"
+										data-attendance="maybe"
+										aria-checked="false"
+										role="radio"
+									>
+										Mungkin
+									</button>
+									<button
+										type="button"
+										class="pill-btn"
+										data-attendance="no"
+										aria-checked="false"
+										role="radio"
+									>
+										Berhalangan
+									</button>
+								</div>
+							</div>
+
+							<div class="form-field">
+								<label for="rsvp-message">
+									Ucapan &amp; Doa
+									<span id="wish-char-count" class="char-count">0/300</span>
+								</label>
+								<textarea
+									id="rsvp-message"
+									name="message"
+									rows="3"
+									maxlength="300"
+									required
+									placeholder="Tuliskan doa dan ucapan hangat untuk kedua mempelai..."
+								></textarea>
+							</div>
+
+							<button
+								type="submit"
+								class="rsvp-submit-btn"
+							>
+								KIRIM UCAPAN
+							</button>
+
+							<p
+								id="rsvp-feedback"
+								class="rsvp-feedback"
+								role="status"
+								aria-live="polite"
+							></p>
+						</form>
+
+						<!-- Daftar Ucapan Tamu -->
+						<div class="wishes-header">
+							<span class="wishes-title">Ucapan Tamu</span>
+							<span id="wishes-total" class="wishes-total">0 ucapan</span>
+						</div>
+						<div
+							id="wishes-list"
+							class="wishes-list"
+						></div>
+					</section>
+
+					<!-- FOOTER -->
+					<footer class="invitation-footer">
+						<p class="footer-monogram">D &amp; A</p>
+						<p class="footer-date">6 Desember 2026 &bull; Majalengka</p>
+					</footer>
+				</main>
+			</div>
+		</div>
+
+		<!-- LIGHTBOX GALERI -->
+		<div
+			id="lightbox-modal"
+			class="modal-backdrop"
+			hidden
+			role="dialog"
+			aria-modal="true"
+			aria-label="Tampilan foto galeri"
+		>
+			<div class="lightbox-card">
+				<button
+					id="close-lightbox-modal"
+					class="lightbox-close"
+					type="button"
+					aria-label="Tutup foto"
+				>
+					&times;
+				</button>
+				<img
+					id="lightbox-img"
+					src=""
+					alt="Foto galeri Dian & Ajeng"
+					class="lightbox-img"
+				/>
+			</div>
+		</div>
+
+		<!-- MODAL TANDA KASIH -->
+		<div
+			id="gifts-modal"
+			class="modal-backdrop"
+			hidden
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="gifts-modal-title"
+		>
+			<div class="modal-card">
+				<button
+					id="close-gifts-modal"
+					class="modal-close"
+					type="button"
+					aria-label="Tutup detail rekening"
+				>
+					&times;
+				</button>
+				<h3
+					id="gifts-modal-title"
+					class="modal-title"
+				>
+					Tanda Kasih
+				</h3>
+				<p class="modal-desc">
+					Terima kasih atas doa restu dan kebaikan hati Anda.
+				</p>
+
+				<div class="bank-card">
+					<p class="bank-name">Bank Central Asia (BCA)</p>
+					<p class="bank-account">1234 5678 90</p>
+					<p class="bank-holder">a.n. Dian Hidayat &amp; Ajeng Fauziah</p>
+					<button
+						class="copy-btn"
+						type="button"
+						data-copy="1234567890"
+					>
+						Salin Nomor Rekening
+					</button>
+				</div>
+
+				<div class="bank-card">
+					<p class="bank-name">Bank Mandiri</p>
+					<p class="bank-account">0987 6543 2109</p>
+					<p class="bank-holder">a.n. Ajeng Fauziah</p>
+					<button
+						class="copy-btn"
+						type="button"
+						data-copy="098765432109"
+					>
+						Salin Nomor Rekening
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script
+			type="module"
+			src="/src/main.ts"
+		></script>
+	</body>
+</html>
