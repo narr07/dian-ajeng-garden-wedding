@@ -20,6 +20,11 @@
 			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="preload"
+			as="image"
+			href="/assets/curtain-sage-linen.webp"
+		/>
 	</head>
 	<body>
 		<div class="page-backdrop">
@@ -50,9 +55,11 @@
 				>
 					<div class="hero-stage">
 						<img
-							src="/assets/hero-estate.png"
+							src="/assets/hero-estate.webp"
 							alt="Vila taman bordir dan air mancur"
 							class="hero-estate-img"
+							fetchpriority="high"
+							decoding="async"
 						/>
 						<div
 							id="hero-couple-reveal"
@@ -80,9 +87,11 @@
 						aria-hidden="true"
 					>
 						<img
-							src="/assets/curtain-drapes.png"
+							src="/assets/curtain-drapes.webp"
 							alt="Tirai kain linen gading dengan mutiara"
 							class="curtain-drapes-img"
+							fetchpriority="high"
+							decoding="async"
 						/>
 					</div>
 
@@ -169,24 +178,32 @@
 					>
 						<div class="welcome-art-frame">
 							<img
-								src="/assets/welcome-top-ornament.png"
+								src="/assets/welcome-top-ornament.webp"
 								alt=""
 								class="welcome-layer welcome-top-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
-								src="/assets/welcome-swan-left.png"
+								src="/assets/welcome-swan-left.webp"
 								alt="Angsa bordir kiri"
 								class="welcome-layer welcome-swan-left"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
-								src="/assets/welcome-swan-right.png"
+								src="/assets/welcome-swan-right.webp"
 								alt="Angsa bordir kanan"
 								class="welcome-layer welcome-swan-right"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
-								src="/assets/welcome-bottom-border.png"
+								src="/assets/welcome-bottom-border.webp"
 								alt=""
 								class="welcome-layer welcome-bottom-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<div class="welcome-overlay-copy">
 								<h2 class="section-serif-title">
@@ -238,14 +255,18 @@
 
 						<div class="layered-ornament-stage">
 							<img
-								src="/assets/collar-leaves.png"
+								src="/assets/collar-leaves.webp"
 								alt=""
 								class="layer-base-img collar-leaves-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
-								src="/assets/collar-flowers.png"
+								src="/assets/collar-flowers.webp"
 								alt="Ornamen bunga bordir dan mutiara"
 								class="layer-top-img collar-flowers-img"
+								loading="lazy"
+								decoding="async"
 							/>
 						</div>
 					</section>
@@ -263,10 +284,11 @@
 						<div class="couple-person">
 							<div class="couple-portrait-frame">
 								<img
-									src="/gallery/dian.jpeg"
+									src="/gallery/dian.webp"
 									alt="Dian Hidayat"
 									class="couple-portrait-img"
 									loading="lazy"
+									decoding="async"
 								/>
 							</div>
 							<p class="couple-role">MEMPELAI PRIA</p>
@@ -287,10 +309,11 @@
 						<div class="couple-person">
 							<div class="couple-portrait-frame">
 								<img
-									src="/gallery/ajeng.jpeg"
+									src="/gallery/ajeng.webp"
 									alt="Ajeng Fauziah"
 									class="couple-portrait-img"
 									loading="lazy"
+									decoding="async"
 								/>
 							</div>
 							<p class="couple-role">MEMPELAI WANITA</p>
@@ -316,9 +339,11 @@
 					>
 						<div class="embroidered-frame-box">
 							<img
-								src="/assets/ceremony-frame.png"
+								src="/assets/ceremony-frame.webp"
 								alt="Bingkai bunga wisteria dan mawar bordir"
 								class="frame-bg-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<div class="frame-overlay-content">
 								<h2 class="venue-heading">Akad<br />&amp; Resepsi</h2>
@@ -380,9 +405,11 @@
 						</p>
 
 						<img
-							src="/assets/dress-code-guests.png"
+							src="/assets/dress-code-guests.webp"
 							alt="Ilustrasi busana tamu undangan"
 							class="full-bleed-img dress-img"
+							loading="lazy"
+							decoding="async"
 						/>
 					</section>
 
@@ -393,14 +420,18 @@
 					>
 						<div class="layered-ornament-stage story-arch-stage">
 							<img
-								src="/assets/story-leaves.png"
+								src="/assets/story-leaves.webp"
 								alt=""
 								class="layer-base-img story-leaves-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<img
-								src="/assets/story-flowers.png"
+								src="/assets/story-flowers.webp"
 								alt="Lengkungan bunga wisteria dan mawar"
 								class="layer-top-img story-flowers-img"
+								loading="lazy"
+								decoding="async"
 							/>
 						</div>
 						<div class="story-inner">
@@ -451,7 +482,7 @@
 							</div>
 							<div class="timeline-row">
 								<div class="timeline-icon">
-									<img src="/assets/timeline-discoball.png" alt="Resepsi" />
+									<img src="/assets/timeline-discoball.webp" alt="Resepsi" loading="lazy" decoding="async" />
 								</div>
 								<div class="timeline-info">
 									<span class="tl-time">12:00 WIB</span>
@@ -480,42 +511,42 @@
 							<button
 								type="button"
 								class="gallery-card gallery-card-wide"
-								data-lightbox="/gallery/cover.jpeg"
+								data-lightbox="/gallery/cover.webp"
 								aria-label="Perbesar foto sampul"
 							>
-								<img src="/gallery/cover.jpeg" alt="Dian & Ajeng" loading="lazy" />
+								<img src="/gallery/cover.webp" alt="Dian & Ajeng" loading="lazy" decoding="async" />
 							</button>
 							<button
 								type="button"
 								class="gallery-card"
-								data-lightbox="/gallery/curtain.jpg"
+								data-lightbox="/gallery/curtain.webp"
 								aria-label="Perbesar foto galeri 1"
 							>
-								<img src="/gallery/curtain.jpg" alt="Dian & Ajeng" loading="lazy" />
+								<img src="/gallery/curtain.webp" alt="Dian & Ajeng" loading="lazy" decoding="async" />
 							</button>
 							<button
 								type="button"
 								class="gallery-card"
-								data-lightbox="/gallery/seated.jpg"
+								data-lightbox="/gallery/seated.webp"
 								aria-label="Perbesar foto galeri 2"
 							>
-								<img src="/gallery/seated.jpg" alt="Dian & Ajeng" loading="lazy" />
+								<img src="/gallery/seated.webp" alt="Dian & Ajeng" loading="lazy" decoding="async" />
 							</button>
 							<button
 								type="button"
 								class="gallery-card"
-								data-lightbox="/gallery/umbrella.jpg"
+								data-lightbox="/gallery/umbrella.webp"
 								aria-label="Perbesar foto galeri 3"
 							>
-								<img src="/gallery/umbrella.jpg" alt="Dian & Ajeng" loading="lazy" />
+								<img src="/gallery/umbrella.webp" alt="Dian & Ajeng" loading="lazy" decoding="async" />
 							</button>
 							<button
 								type="button"
 								class="gallery-card"
-								data-lightbox="/gallery/countdown.jpg"
+								data-lightbox="/gallery/countdown.webp"
 								aria-label="Perbesar foto galeri 4"
 							>
-								<img src="/gallery/countdown.jpg" alt="Dian & Ajeng" loading="lazy" />
+								<img src="/gallery/countdown.webp" alt="Dian & Ajeng" loading="lazy" decoding="async" />
 							</button>
 						</div>
 
@@ -528,8 +559,8 @@
 									class="wedding-video"
 									controls
 									playsinline
-									preload="metadata"
-									poster="/gallery/cover.jpeg"
+									preload="none"
+									poster="/gallery/cover.webp"
 								>
 									<source src="/gallery/wedding-video.mp4" type="video/mp4" />
 									Browser Anda tidak mendukung pemutar video.
@@ -553,9 +584,11 @@
 					>
 						<div class="gifts-frame-box">
 							<img
-								src="/assets/gifts-frame.png"
+								src="/assets/gifts-frame.webp"
 								alt="Bingkai bordir emas dan bunga"
 								class="frame-bg-img"
+								loading="lazy"
+								decoding="async"
 							/>
 							<div class="gifts-overlay-content">
 								<h2 class="section-serif-title">Tanda Kasih</h2>
@@ -576,9 +609,11 @@
 
 						<div class="gifts-envelope-wrap">
 							<img
-								src="/assets/gifts-envelope.png"
+								src="/assets/gifts-envelope.webp"
 								alt="Amplop linen bordir bersegel"
 								class="gifts-envelope-img"
+								loading="lazy"
+								decoding="async"
 							/>
 						</div>
 					</section>

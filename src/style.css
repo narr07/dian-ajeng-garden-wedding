@@ -46,7 +46,7 @@ body {
 	max-width: 440px;
 	min-height: 100dvh;
 	background-color: var(--paper-bg);
-	background-image: url('/assets/linen-paper-tile.jpg');
+	background-image: url('/assets/linen-paper-tile.webp');
 	background-repeat: repeat;
 	background-size: 180px 180px;
 	box-shadow: 0 24px 70px rgba(44, 34, 32, 0.18);
@@ -236,7 +236,7 @@ body {
 .sage-door {
 	width: 50%;
 	height: 100%;
-	background-image: url('/assets/curtain-sage-linen.jpg');
+	background-image: url('/assets/curtain-sage-linen.webp');
 	background-size: 200% 100%;
 	transition: transform 1.25s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease 0.95s;
 }
